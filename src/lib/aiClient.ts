@@ -13,12 +13,8 @@ type Msg = { role: "system" | "user" | "assistant"; content: string };
 type Provider = "nvidia" | "sarvam";
 
 const ENDPOINTS: Record<Provider, string> = {
-  nvidia: import.meta.env.DEV
-    ? "/api-nvidia/chat/completions"
-    : "https://integrate.api.nvidia.com/v1/chat/completions",
-  sarvam: import.meta.env.DEV
-    ? "/api-sarvam/chat/completions"
-    : "https://api.sarvam.ai/v1/chat/completions",
+  nvidia: "/api-nvidia/chat/completions",
+  sarvam: "/api-sarvam/chat/completions",
 };
 
 const MODELS: Record<Provider, string> = {
